@@ -64,4 +64,19 @@ public class CalcTest {
     public void test10() {
         assertThat(Calc.run("10 - 20 - 30")).isEqualTo(-40);
     }
+    @Test
+    @DisplayName("10 - 10 - 10 - 10 + 10 + 10 - 10 == -10")
+    public void test11() {
+        assertThat(Calc.run("10 - 10 - 10 - 10 + 10 + 10 - 10")).isEqualTo(-10);
+    }
+    @Test
+    @DisplayName("10 - 10 - 10 - 10 + 10 + 10 - 10 == -10")
+    public void test12() {
+        assertThat(Calc.run("10 - 10 - 10 - 10 + 10 + 10 - 10")).isEqualTo(-10);
+    }
+    @Test
+    @DisplayName("10 * 10 * 10 == 1000")
+    public void test13() {
+        assertThat(Calc.run("10 * 10 * 10")).isEqualTo(1000);
+    }
 }
