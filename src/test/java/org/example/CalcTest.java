@@ -70,13 +70,23 @@ public class CalcTest {
         assertThat(Calc.run("10 - 10 - 10 - 10 + 10 + 10 - 10")).isEqualTo(-10);
     }
     @Test
-    @DisplayName("10 - 10 - 10 - 10 + 10 + 10 - 10 == -10")
+    @DisplayName("10 - 10 - 10 - 10 == -20")
     public void test12() {
-        assertThat(Calc.run("10 - 10 - 10 - 10 + 10 + 10 - 10")).isEqualTo(-10);
+        assertThat(Calc.run("10 - 10 - 10 - 10")).isEqualTo(-20);
     }
     @Test
     @DisplayName("10 * 10 * 10 == 1000")
     public void test13() {
         assertThat(Calc.run("10 * 10 * 10")).isEqualTo(1000);
+    }
+    @Test
+    @DisplayName("10 * 10 * 10 * 5 == 5000")
+    public void test14() {
+        assertThat(Calc.run("10 * 10 * 10 * 5")).isEqualTo(5000);
+    }
+    @Test
+    @DisplayName("10 + 5 * 2 == 20")
+    public void test15() {
+        assertThat(Calc.run("10 + 5 * 2")).isEqualTo(20);
     }
 }
