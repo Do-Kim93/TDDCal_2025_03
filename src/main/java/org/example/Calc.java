@@ -3,6 +3,8 @@ package org.example;
 public class Calc {
 
     public static int run(String exp) {
+        exp = exp.replace("- ", "+ -");
+        System.out.println(exp);
 
         boolean needToPlus = exp.contains("+");
         boolean needToMinus = exp.contains("-");
@@ -22,6 +24,7 @@ public class Calc {
         if (bits.length > 2) {
             c = Integer.parseInt(bits[2]);
         }
+
 
         if (needToPlus) {
             return a + b + c;
