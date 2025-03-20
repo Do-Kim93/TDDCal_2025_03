@@ -10,7 +10,7 @@ public class CalcTest {
     @Test
     @DisplayName("1 + 1 == 2")
     public void test1() {
-        assertThat(Calc.run("1 + 1")).isEqualTo(2);
+        assertThat(Calc.run("(((1 + 1)))")).isEqualTo(2);
     }
 
     @Test
@@ -143,6 +143,45 @@ public class CalcTest {
     @DisplayName("((20 + 20)) + 20 == 60")
     public void test24() {
         assertThat(Calc.run("((20 + 20)) + 20")).isEqualTo(60);
+    }
+
+    @Test
+    @DisplayName("(20 + 20) * 20 == 800")
+    public void test25() {
+        assertThat(Calc.run("(20 + 20) * 20")).isEqualTo(800);
+    }
+
+    @Test
+    @DisplayName("(10 + 20) * 3 == 90")
+    public void test26() {
+        assertThat(Calc.run("(10 + 20) * 3")).isEqualTo(90);
+    }
+
+    @Test
+    @DisplayName("10 + (10 + 5) == 25")
+    public void test27() {
+        assertThat(Calc.run("10 + (10 + 5)")).isEqualTo(25);
+    }
+
+    @Test
+    @DisplayName("-(10 + 5) == -15")
+    public void test28() {
+        assertThat(Calc.run("-(10 + 5)")).isEqualTo(-15);
+    }
+    @Test
+    @DisplayName("-(8 + 2) * -(7 + 3) + 5 == 105")
+    public void test29() {
+        assertThat(Calc.run("-(8 + 2) * -(7 + 3) + 5")).isEqualTo(105);
+    }
+    @Test
+    @DisplayName("5 - (1 + 5)")
+    public void test31() {
+        assertThat(Calc.run("5 - (1 + 5)")).isEqualTo(-1);
+    }
+    @Test
+    @DisplayName("3 * 1 + (1 - (4 * 1 - (1 - 1))) == 0")
+    public void test30() {
+        assertThat(Calc.run("3 * 1 + (1 - (4 * 1 - (1 - 1)))")).isEqualTo(0);
     }
 
 }
